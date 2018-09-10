@@ -44,7 +44,7 @@ public class ActionArguments {
 			return;
 		}
 
-		repos.add(new ActionReport(a, r));
+		repos.add(new ActionReport(a, r,aftermaxr));
 	}
 
 	public double maxR() {
