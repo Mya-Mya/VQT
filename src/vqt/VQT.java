@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class VQT {
 	public static final double MAKE_NEW_ROW=0.1;
-	
+
 	public ArrayList<VQTRow> data=new ArrayList<VQTRow>();
 
 	//質問を受ける
@@ -33,7 +33,8 @@ public class VQT {
 			return;
 		};
 
-		data.add(new VQTRow(st,a,r));
+		data.add(new VQTRow(st,a,r,
+				nearStAfterRow==null?0:nearStAfterRow.a_arg.maxR()));
 	}
 
 	//入力sに最も近いsを含む行を見つける

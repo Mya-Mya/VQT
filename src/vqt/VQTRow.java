@@ -8,10 +8,10 @@ public class VQTRow {
 	public ActionArguments a_arg;
 	public Action a_dci;
 
-	public VQTRow(Situation s,Action a,double r) {
+	public VQTRow(Situation s,Action a,double r, double aftermaxr) {
 		this.s=s;
 		this.a_arg=new ActionArguments();
-		this.study(a, r,0);
+		this.study(a, r,aftermaxr);
 	}
 
 	public void study(Action a, double r,double aftermaxr) {
@@ -20,7 +20,7 @@ public class VQTRow {
 
 		//決定行動を行動議論集から計算する
 		a_dci=a_arg.decideA();
-		
+
 		//メモリ掃除
 		Random rdm=new Random();
 		if(rdm.nextDouble()<0.01) {
